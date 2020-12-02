@@ -107,6 +107,18 @@ public class Test {
 		System.out.println(r1.equals(r2));
 		System.out.println(r1.equals(c2));
 		
+		Donut d = new Donut(p, 30, 15);
+		System.out.println(d.contains(50, 100));
+		System.out.println(d.contains(p2));
+		
+		Circle d1 = new Donut();
+		
+		System.out.println(d instanceof Donut);
+		System.out.println(d instanceof Circle);
+		System.out.println(d instanceof SurfaceShape);
+		System.out.println(d instanceof Shape);
+		
+		
 	}
 
 }
