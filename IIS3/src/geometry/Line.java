@@ -26,6 +26,20 @@ public class Line extends Shape {
 		this(startPoint, endPoint, selected);
 		this.setColor(color);
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Line) {
+			return (int) (this.length() - ((Line) o).length());
+		}
+		return 0;
+	}
+	
+	@Override
+	public void moveBy(int byX, int byY) {
+		this.startPoint.moveBy(byX, byY);
+		this.endPoint.moveBy(byX, byY);
+	}
 	
 	@Override
 	public void draw(Graphics g) {

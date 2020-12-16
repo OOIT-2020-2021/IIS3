@@ -33,6 +33,19 @@ public class Rectangle extends SurfaceShape {
 		this(upperLeftPoint,width,height,selected,color);
 		this.setInnerColor(innerColor);
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Rectangle) {
+			return this.area() - ((Rectangle) o).area();
+		}
+		return 0;
+	}
+	
+	@Override
+	public void moveBy(int byX, int byY) {
+		this.upperLeftPoint.moveBy(byX, byY);
+	}
 	
 	@Override
 	public void fill(Graphics g) {
